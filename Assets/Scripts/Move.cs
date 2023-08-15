@@ -14,6 +14,7 @@ public class Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.Instance.IsEndGame()) return;
         transform.position += new Vector3(-speedMove, 0, 0) * Time.deltaTime;
     }
 }

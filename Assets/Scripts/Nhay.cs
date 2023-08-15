@@ -21,11 +21,13 @@ public class Nhay : MonoBehaviour
                 con chim sẽ bay lên
             }
          */
+        if (GameManager.Instance.IsEndGame()) return;
         bool isTap = Input.GetKeyDown(KeyCode.Space);
         if (isTap)
         {
             Debug.Log("Đã bấm phím cách");
             myBody.velocity = new Vector2(0, jumpForce);
+            AudioManager.Instance.PlayAudioFlap();
             // old: 0, 0 + (0, 10) => (0,10)
         }
     }
